@@ -20,7 +20,8 @@ resource "google_cloud_run_service" "run_app" {
   template {
     spec {
       containers {
-        image = "gcr.io/google-samples/hello-app:1.0"
+        image = "gcr.io/takehomeproject-tomtar/nestjs-realworld-example-app:latest"
+
         env {
           name  = "DB_HOST"
           value = var.db_host
