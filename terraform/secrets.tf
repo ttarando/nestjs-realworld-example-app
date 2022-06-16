@@ -1,6 +1,6 @@
 resource "google_project_service" "secrets_manager" {
-  service            = "secretmanager.googleapis.com"
-//  disable_on_destroy = true
+  service = "secretmanager.googleapis.com"
+  //  disable_on_destroy = true
 }
 
 data "google_secret_manager_secret_version" "db_pass" {

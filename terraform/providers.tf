@@ -6,8 +6,8 @@ terraform {
   }
 
   backend "gcs" {
-    bucket  = "tf-state-takehomeproject"
-    prefix  = "terraform/state"
+    bucket = "tf-state-takehomeproject"
+    prefix = "terraform/state"
   }
 }
 

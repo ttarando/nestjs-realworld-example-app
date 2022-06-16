@@ -43,7 +43,7 @@ resource "google_cloud_run_service" "run_app" {
           value_from {
             secret_key_ref {
               name = var.db_pass_secret
-              key = "latest"
+              key  = "latest"
             }
           }
         }
