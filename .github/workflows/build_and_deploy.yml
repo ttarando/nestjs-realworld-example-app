@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Setup GCP Service Account creds
-        uses: google-github-actions/setup-gcloud@master
+        uses: google-github-actions/setup-gcloud@v0
         with:
           version: 'latest'
           service_account_email: ${{ secrets.GCP_SA_EMAIL }}
@@ -30,7 +30,7 @@ jobs:
 
       - uses: RafikFarhad/push-to-gcr-github-action@v4
         with:
-          gcloud_service_key: ${{ secrets.GCP_SA_KEY }}
+          gcloud_service_key: ${{ secrets.GCP_SA_KEY_ENC }}
           registry: gcr.io
           project_id: takehomeproject-tomtar
           image_name: nestjs-realworld-example-app
