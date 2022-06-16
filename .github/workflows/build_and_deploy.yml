@@ -39,6 +39,7 @@ jobs:
 
   terraform_plan:
     name: 'Terraform Plan'
+    needs: build-and-push-to-gcr
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master' && github.event_name == 'push'
 
