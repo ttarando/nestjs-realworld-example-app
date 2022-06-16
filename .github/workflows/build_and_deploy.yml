@@ -20,6 +20,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Add config
+        continue-on-error: false
+        run: |
+          echo "export const SECRET = '${{ secrets.APP_SECRET_KEY }}';" > ./src/config.ts
+
       - id: 'auth'
         uses: 'google-github-actions/auth@v0'
         with:
@@ -56,7 +61,7 @@ jobs:
         uses: 'google-github-actions/setup-gcloud@v0'
 
       - name: Terraform Plan
-        continue-on-error: true
+        continue-on-error: false
         run: |
           cd terraform
           chmod +x "${GITHUB_WORKSPACE}/.github/workflows/tf_init.sh"
