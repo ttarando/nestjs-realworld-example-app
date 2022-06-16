@@ -25,5 +25,8 @@ src/config.ts
 # code testing coverage
 coverage
 
-
 dist/*
+
+# Terraform
+terraform/.terraform.lock.hcl
+terraform/.terraform
