@@ -21,7 +21,9 @@ resource "google_cloud_run_service" "run_app" {
     spec {
       containers {
         image = "gcr.io/takehomeproject-tomtar/nestjs-realworld-example-app:latest"
-
+        ports {
+          container_port = 3000
+        }
         env {
           name  = "DB_HOST"
           value = var.db_host
