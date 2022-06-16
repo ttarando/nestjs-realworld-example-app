@@ -107,6 +107,61 @@ The database tables are now set up and the prisma client is generated. For more 
 - `npm run start:watch` - Start application in watch mode
 - `npm run test` - run Jest test runner 
 - `npm run start:prod` - Build application
+- `npm run db:seed` - DB seeding
+
+----------
+## DB connection config via env variables
+There are 5 env variables which can be used to configure DB connection string.
+These are:
+* `DB_HOST` - optional, default is 'localhost'
+* `DB_PORT` - optional, default is 5432
+* `DB_USER` - optional, default is 'postgres'
+* `DB_PASS` - required, no default
+* `DB_NAME` - optional, default is 'postgres'
+
+### Starting service
+1) export DB connection variables, in example:
+    ```
+    export DB_HOST=<host>> DB_PORT=5432 DB_USER=<user> DB_PASS=<pass> DB_NAME=<database>
+    ```
+2) run DB seed script
+    ```
+    npm start
+    ```
+   
+----------
+## DB Seeding
+Start the API and once it's up and running open up another terminal and run the following:
+1) export DB connection variables, in example:
+    ```
+    export DB_HOST=<host> DB_PORT=5432 DB_USER=<user> DB_PASS=<pass> DB_NAME=<database>
+    ```
+2) run DB seed script
+    ```
+    npm run db:seed
+    ```
+
+----------
+## Manual building and running using Docker
+### Build
+```
+docker build . -t realworld-example-api:latest
+```
+### Run
+```
+docker run -e DB_PASS=<your-db-pass> -e DB_HOST=<your-db-host> realworld-example-api
+```
+
+----------
+## Local development using docker-compose
+### DB only
+```
+docker-compose up postgres
+```
+### DB and App
+```
+docker-compose up api
+```
 
 ----------
 

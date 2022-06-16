@@ -1,0 +1,7 @@
+gcp_region      = "europe-north1"
+gcp_project     = "takehomeproject-tomtar"
+db_host         = "host"
+db_port         = "port"
+db_user         = "user"
+db_name         = "dbname"
+db_pass_secret  = "db_password"
