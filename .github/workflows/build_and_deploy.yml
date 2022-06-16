@@ -30,7 +30,7 @@ jobs:
 
       - uses: RafikFarhad/push-to-gcr-github-action@v4
         with:
-          gcloud_service_key: ${{ secrets.GCP_SA_KEY }}
+          gcloud_service_key: ${{ secrets.GCP_SA_KEY_ENC }}
           registry: gcr.io
           project_id: takehomeproject-tomtar
           image_name: nestjs-realworld-example-app
