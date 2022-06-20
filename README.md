@@ -175,6 +175,15 @@ artillery run test/simple-load-test.yaml
 ```
 
 ----------
+## Public cloud and service choice justification
+
+Since there are no specific requirements for architecture, security and scalability I was looking for application run service or serverless container platform and compared AWS and GCP.
+Mainly compared AWS Fargate GCP Cloud Run and GCP App Engine.
+Decided to go with Cloud Run for few resons:
+* I prefer to deploy containers rather than code directly
+* Compared to Fargate, Cloud Run is better optimized for cost. Built on Knative can scale to zero and therefore pricing model is per number of requests which makes sense for this task (testing small API, no production requirements).
+
+----------
 
 ## API Specification
 
