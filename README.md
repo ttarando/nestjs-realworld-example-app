@@ -164,6 +164,17 @@ docker-compose up api
 ```
 
 ----------
+## Load test 
+### Install Artillery
+```
+npm install -g artillery@1.6.0
+```
+### Run test
+```
+artillery run test/simple-load-test.yaml
+```
+
+----------
 
 ## API Specification
 
