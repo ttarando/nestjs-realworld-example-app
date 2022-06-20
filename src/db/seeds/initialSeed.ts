@@ -18,7 +18,12 @@ export default class InitialDatabaseSeed implements Seeder {
       })
       .createMany(10);
 
-//     await factory(Comment)().createMany(15);
+    await factory(Comment)()
+    .map(async (comment) => {
+        comment.article = articles[Math.floor(Math.random() * users.length)];
+        return comment;
+    })
+    .createMany(10);
 
   }
 }
